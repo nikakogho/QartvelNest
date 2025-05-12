@@ -67,7 +67,7 @@ Legend: solid lines = in‑production links; dotted lines = simulation loopbacks
 
 ## 5  Interface Contracts (Level 2)
 
-### 5.1 FIFO: `/tmp/saksat/downlink.bits`
+### 5.1 FIFO: `/tmp/qartvelsat/downlink.bits`
 
 *Type:* POSIX named pipe (byte‑oriented).
 *Producer:* M‑DL
