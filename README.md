@@ -1,5 +1,5 @@
 # QartvelNest
-Ground station software + hardware instructions for QartvelSat-1, Georgia’s first CubeSat.
+Ground station for QartvelSat-1, Georgia’s first CubeSat.
 
 ## Overview
 This repository contains the software stack, simulations, hardware setup instructions and documentation for the QartvelNest ground station.
