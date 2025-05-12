@@ -15,4 +15,4 @@ This repository contains the software stack, simulations, hardware setup instruc
 - **ci**: Continuous integration and automated testing.
 
 ## Contributing
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](docs/CONTRIBUTING.md).
