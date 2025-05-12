@@ -8,3 +8,4 @@
 |   ⬜️   | **3** | `contributing-doc`  | **Publish CONTRIBUTING.md & hooks**     | PRs fail CI if lint/tests fail; pre‑commit hook operational.                          |
 |   ⬜️   | **4** | `hardware-doc-rev1` | **Rewrite hardware build instructions** | Assembly\_Instructions.md reviewed; BOM prices & part numbers validated.              |
 |   ⬜️   | **5** | `uplink-security`   | **Anti‑replay & sequence numbers**      | Integration test rejects duplicate frame; accepts fresh sequence; documented in spec. |
+|   ⬜️   | **6** | `testdata`  | **Generate test data and place in `test-data**                | Good enough test data for modules to use.  |

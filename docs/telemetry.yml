@@ -1,0 +1,30 @@
+version: 1
+fields:
+  - id: 0
+    name: uptime
+    offset: 1
+    len: 2
+    type: uint16
+    scale: 1
+    unit: s
+  - id: 1
+    name: batt_mv
+    offset: 3
+    len: 2
+    type: uint16
+    scale: 0.001
+    unit: V
+  - id: 2
+    name: panel_temp
+    offset: 5
+    len: 1
+    type: int8
+    scale: 1
+    unit: °C
+  - id: 3
+    name: beacon_interval
+    offset: 6
+    len: 1
+    type: uint8
+    scale: 1
+    unit: s
