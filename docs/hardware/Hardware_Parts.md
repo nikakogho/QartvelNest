@@ -1,0 +1,9 @@
+- **Antennas (VHF & UHF/S-Band)**: Transmit (VHF), receive (UHF, S-Band if added).
+- **Rotator Assembly**: Points directional antennas accurately at the satellite.
+- **SDR (Software Defined Radio)**: Receives UHF/S-Band; may drive VHF transmit.
+- **LNA (Low Noise Amplifier)**: Boosts weak downlink signals before SDR.
+- **Transmit Radio/Amplifier (VHF)**: Dedicated unit for robust VHF uplink signal.
+- **Filters (RF)**: Minimize interference on uplink and downlink bands.
+- **Control Computer/Server**: Runs all ground station software and processing.
+- **Network Equipment**: For local connectivity and internet access.
+- **Power Supply System**: Provides stable power to all components.

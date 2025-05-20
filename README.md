@@ -4,7 +4,12 @@ Ground station for QartvelSat-1, Georgia’s first CubeSat.
 ## Overview
 This repository contains the software stack, simulations, hardware setup instructions and documentation for the QartvelNest ground station.
 
-## Modules
+## Hardware
+
+- [Hardware Parts](docs/hardware/Hardware_Parts.md)
+- [Bill of Materials](docs/hardware/BOM.md)
+
+## Software Modules
 - **downlink**: SDR receiver based on SatNOGS client.
 - **demod**: GMSK demodulator & AX.25 decoder.
 - **telemetry**: Parser, database, and REST API.
