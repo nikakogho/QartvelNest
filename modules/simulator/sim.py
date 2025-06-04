@@ -91,6 +91,11 @@ def build_ax25_frame(payload: bytes) -> bytes:
     return bytes([0x7E]) + frame_no_fcs + fcs + bytes([0x7E])
 
 
+def in_pass(elapsed: float) -> bool:
+    """Return True if the satellite is in view at *elapsed* seconds."""
+    return int(elapsed) % 60 < 30
+
+
 def build_parser() -> argparse.ArgumentParser:
     """Return the argument parser for the simulator CLI."""
     parser = argparse.ArgumentParser(
@@ -101,6 +106,11 @@ def build_parser() -> argparse.ArgumentParser:
         type=int,
         default=5,
         help="Beacon interval in seconds",
+    )
+    parser.add_argument(
+        "--orbit",
+        action="store_true",
+        help="Enable simple visibility window simulation",
     )
     return parser
 
@@ -153,14 +163,21 @@ def main(argv=None) -> None:
     sock.bind(args.pub)
 
     try:
+        start = time.time()
         while True:
-            payload = build_telemetry_payload(state)
-            frame = build_ax25_frame(payload)
-            sock.send(frame)
-            if args.once:
-                # Give ZeroMQ time to flush before closing
-                time.sleep(0.1)
-                break
+            visible = not args.orbit or in_pass(time.time() - start)
+            if visible:
+                payload = build_telemetry_payload(state)
+                frame = build_ax25_frame(payload)
+                sock.send(frame)
+                if args.once:
+                    # Give ZeroMQ time to flush before closing
+                    time.sleep(0.1)
+                    break
+            else:
+                if args.once:
+                    break
+
             time.sleep(state.beacon_interval)
             state.uptime += state.beacon_interval
     except KeyboardInterrupt:  # pragma: no cover - interactive use
