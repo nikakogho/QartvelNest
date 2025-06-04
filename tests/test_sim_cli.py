@@ -8,3 +8,16 @@ def test_sim_help():
     result = subprocess.run([sys.executable, str(script), "--help"], capture_output=True, text=True)
     assert result.returncode == 0
     assert "QartvelSat-1" in result.stdout
+
+
+def test_sim_interval_output():
+    """Ensure CLI prints state with the requested beacon interval."""
+    root = Path(__file__).resolve().parents[1]
+    script = root / "modules" / "simulator" / "sim.py"
+    result = subprocess.run(
+        [sys.executable, str(script), "--interval", "12"],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0
+    assert "beacon_interval=12" in result.stdout
